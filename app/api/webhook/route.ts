@@ -3,7 +3,7 @@ import { addMessage } from '@/lib/whatsapp/store'
 import { sendWhatsAppMessage } from '@/lib/whatsapp/api'
 import { WhatsAppMessage, WhatsAppWebhookPayload } from '@/lib/whatsapp/types'
 
-const VERIFY_TOKEN = 'dev_verify_token'
+const VERIFY_TOKEN = process.env.WHATSAPP_VERIFY_TOKEN
 
 export async function GET(request: NextRequest) {
   const mode = request.nextUrl.searchParams.get('hub.mode')
